@@ -1,7 +1,12 @@
 # Sistemas de Recomendacion 2026
 Este es un repositorio para subir actualizaciones del proyecto de la materia de sistemas de recomendacion de la informacion.
 
-[Video de entrega final](https://youtu.be/pe8-m8xW5-8?si=50IB9qsYvtX52QUg)
+
+### Video de entrega final
+* [Aquí!!](https://youtu.be/pe8-m8xW5-8?si=50IB9qsYvtX52QUg)
+
+
+
 
 | NOMBRES                     | FOTO                                                                                          | DESCRIPCIÓN                                                                                                                                                             | LINKEDIN                                                                |
 |----------------------------|-----------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|
