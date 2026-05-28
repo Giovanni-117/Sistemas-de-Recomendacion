@@ -1,0 +1,15 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import AccesoClientesX from "@/components/login/accesoClientes/accesoClientes.tsx";
+import { verificarAutenticacionCliente } from "@/lib/auth/jwtCliente.ts"; // ─── Guard de autenticación de cliente ──────────────────────────────────────
+
+const cliente = verificarAutenticacionCliente(Astro.request);
+if (cliente) {
+  return Astro.redirect("/inicio");
+}
+
+---
+
+<Layout title="Iniciar Sesión | YUCA">
+  <AccesoClientesX client:load />
+</Layout>

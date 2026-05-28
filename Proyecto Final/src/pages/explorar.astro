@@ -1,0 +1,15 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Navbar from "@/components/navbar.tsx";
+import EncabezadoGeneral from "@/components/encabezadoGeneral.tsx";
+import ExploradorContenido from "@/components/producto/exploradorContenido.tsx";
+import EstrellaFlotante from "@/components/ganar/estrellaFlotante.tsx";
+---
+
+<Layout>
+  <EncabezadoGeneral client:idle />
+  <ExploradorContenido client:load />
+
+  <Navbar client:idle />
+  <EstrellaFlotante client:idle probabilidad={0.1} />
+</Layout>
