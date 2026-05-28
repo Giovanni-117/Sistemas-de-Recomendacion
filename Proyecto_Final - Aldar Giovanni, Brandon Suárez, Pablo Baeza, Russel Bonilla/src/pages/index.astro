@@ -1,0 +1,205 @@
+---
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout>
+  <main
+    class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-base-100 text-base-content selection:bg-primary/30"
+  >
+    <!-- Dynamic Background Elements -->
+    <div
+      class="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden"
+    >
+      <!-- Central glow -->
+      <div
+        class="absolute h-[50vh] w-[50vw] rounded-full bg-primary/10 blur-[120px] opacity-70 animate-pulse mix-blend-multiply"
+        style="animation-duration: 8s;"
+      >
+      </div>
+      <!-- Top right glow -->
+      <div
+        class="absolute -top-[20%] -right-[10%] h-[600px] w-[600px] rounded-full bg-secondary/10 blur-[120px] mix-blend-multiply"
+      >
+      </div>
+      <!-- Bottom left glow -->
+      <div
+        class="absolute -bottom-[20%] -left-[10%] h-[600px] w-[600px] rounded-full bg-accent/10 blur-[120px] mix-blend-multiply"
+      >
+      </div>
+    </div>
+
+    <!-- Subtle Noise overlay for premium texture -->
+    <div
+      class="pointer-events-none absolute inset-0 opacity-[0.03]"
+      style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');"
+    >
+    </div>
+
+    <!-- Content Container -->
+    <div
+      class="relative z-10 w-full max-w-5xl px-6 text-center flex flex-col items-center justify-center"
+    >
+      <!-- Decorative Badge -->
+      <div
+        class="group mb-8 inline-flex items-center gap-2.5 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 backdrop-blur-md transition-colors hover:bg-primary/10"
+      >
+        <span class="relative flex h-2 w-2">
+          <span
+            class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"
+          ></span>
+          <span class="relative inline-flex h-2 w-2 rounded-full bg-primary"
+          ></span>
+        </span>
+        <span class="text-xs font-bold uppercase tracking-widest text-primary"
+          >Para Artesanos y Emprendedores</span
+        >
+      </div>
+
+      <!-- One-liner Value Proposition -->
+      <h1
+        class="text-5xl font-black tracking-tight sm:text-7xl lg:text-8xl text-base-content pb-4 drop-shadow-sm"
+      >
+        Muestra lo que haces.<br class="hidden sm:block" /> Enamora a tus clientes.
+      </h1>
+
+      <p
+        class="mt-4 max-w-2xl text-lg sm:text-xl text-base-content/70 font-medium"
+      >
+        Una nueva forma de dar a conocer tus productos y generar clientes
+        recurrentes, de manera cercana y natural.
+      </p>
+
+      <!-- Dual CTA Buttons -->
+      <div class="mt-14 flex flex-col sm:flex-row gap-6 justify-center items-stretch w-full max-w-3xl">
+        <!-- CTA 1: Creadores (Primary) -->
+        <div class="relative group flex-1 cta-card">
+          <!-- Multi-layered glowing backdrops -->
+          <div
+            class="absolute -inset-1.5 rounded-2xl bg-gradient-to-r from-primary via-secondary to-accent opacity-35 blur-xl transition duration-500 group-hover:opacity-75 group-hover:scale-105 group-hover:duration-300"
+          >
+          </div>
+          <div
+            class="absolute -inset-px rounded-2xl bg-gradient-to-r from-primary via-secondary to-accent opacity-50 transition duration-500 group-hover:opacity-100"
+          >
+          </div>
+
+          <a
+            href="/accesoPropietarios"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="relative flex h-full items-center justify-between gap-4 rounded-2xl bg-neutral px-6 py-5 text-neutral-content transition-all duration-300 hover:scale-[1.02] shadow-2xl overflow-hidden border border-white/10"
+            aria-label="Quiero dar a conocer mis productos — Creadores"
+          >
+            <!-- Shimmer reflection effect -->
+            <div 
+              class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-white/15 to-transparent skew-x-12"
+            ></div>
+            
+            <!-- Radial hover highlight -->
+            <div 
+              class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[radial-gradient(circle_at_var(--x,_50%)_var(--y,_50%),rgba(255,255,255,0.08)_0%,transparent_50%)] pointer-events-none cta-glow-overlay"
+            ></div>
+
+            <!-- Left content -->
+            <div class="flex flex-col text-left">
+              <div class="flex items-center gap-1.5 mb-1.5">
+                <span class="relative flex h-2 w-2">
+                  <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75"></span>
+                  <span class="relative inline-flex h-2 w-2 rounded-full bg-accent"></span>
+                </span>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-accent/90">Para Creadores</span>
+              </div>
+              <span class="text-lg font-extrabold tracking-tight leading-tight text-white">
+                Quiero dar a conocer<br/> mis productos
+              </span>
+            </div>
+
+            <!-- Right content: Arrow Icon -->
+            <div class="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-xl bg-white/5 border border-white/10 transition-all duration-300 group-hover:bg-accent group-hover:border-accent group-hover:scale-110 shadow-lg">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-accent group-hover:text-neutral transition-colors duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transform"
+              >
+                <path d="M7 17L17 7"/>
+                <path d="M7 7h10v10"/>
+              </svg>
+            </div>
+          </a>
+        </div>
+
+        <!-- CTA 2: Compradores (Secondary / Glassmorphic) -->
+        <div class="relative group flex-1 cta-card">
+          <!-- Subtle glow backdrop -->
+          <div
+            class="absolute -inset-1.5 rounded-2xl bg-gradient-to-r from-accent to-secondary opacity-15 blur-lg transition duration-500 group-hover:opacity-35 group-hover:scale-105 group-hover:duration-300"
+          >
+          </div>
+          <div
+            class="absolute -inset-px rounded-2xl bg-base-content/10 transition duration-500 group-hover:bg-base-content/20"
+          >
+          </div>
+
+          <a
+            href="/inicio"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="relative flex h-full items-center justify-between gap-4 rounded-2xl bg-base-100/60 backdrop-blur-md px-6 py-5 text-base-content transition-all duration-300 hover:scale-[1.02] shadow-xl overflow-hidden border border-base-content/5"
+            aria-label="Quiero explorar y comprar — Compradores"
+          >
+            <!-- Shimmer reflection effect -->
+            <div 
+              class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-base-content/5 to-transparent skew-x-12"
+            ></div>
+            
+            <!-- Radial hover highlight -->
+            <div 
+              class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[radial-gradient(circle_at_var(--x,_50%)_var(--y,_50%),rgba(100,100,250,0.05)_0%,transparent_50%)] pointer-events-none cta-glow-overlay"
+            ></div>
+
+            <!-- Left content -->
+            <div class="flex flex-col text-left">
+              <div class="flex items-center gap-1.5 mb-1.5">
+                <span class="relative flex h-2 w-2">
+                  <span class="relative inline-flex h-2 w-2 rounded-full bg-primary/70"></span>
+                </span>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-base-content/60">Para Compradores</span>
+              </div>
+              <span class="text-lg font-extrabold tracking-tight leading-tight">
+                Quiero descubrir<br/> productos locales
+              </span>
+            </div>
+
+            <!-- Right content: Arrow Icon -->
+            <div class="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-xl bg-base-content/5 border border-base-content/10 transition-all duration-300 group-hover:bg-primary group-hover:border-primary group-hover:scale-110 shadow-sm">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-base-content group-hover:text-primary-content transition-colors duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transform"
+              >
+                <path d="M7 17L17 7"/>
+                <path d="M7 7h10v10"/>
+              </svg>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      
+    </div>
+  </main>
+</Layout>

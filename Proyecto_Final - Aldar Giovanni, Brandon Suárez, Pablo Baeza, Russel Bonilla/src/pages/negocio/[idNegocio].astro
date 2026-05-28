@@ -1,0 +1,69 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/navbar.tsx";
+import EstrellaFlotante from "../../components/ganar/estrellaFlotante.tsx";
+import HeaderNegocio from "../../components/negocio/encabezadoNegocio.tsx";
+import CatalogoNegocio from "../../components/negocio/catalogoNegocio.tsx";
+import type { DatosNegocioPublicoResponse } from "@/lib/api/tiposApi/perfilNegocio.ts";
+import type { ProductoPublicoItem } from "@/lib/api/tiposApi/productos.ts";
+
+const { idNegocio } = Astro.params;
+
+if (!idNegocio) {
+  return Astro.redirect("/404");
+}
+
+let negocioData: DatosNegocioPublicoResponse | null = null;
+let productos: ProductoPublicoItem[] = [];
+
+try {
+  const [negocioRes, productosRes] = await Promise.all([
+    fetch(
+      new URL(
+        `/api/cliente/perfil/obtenerDatosNegocioPublico?idNegocio=${idNegocio}`,
+        Astro.url,
+      ),
+    ),
+    fetch(
+      new URL(
+        `/api/cliente/perfil/obtenerProductosPublico?idNegocio=${idNegocio}`,
+        Astro.url,
+      ),
+    ),
+  ]);
+
+  if (negocioRes.ok) {
+    const apiRes = await negocioRes.json();
+    if (apiRes?.data) negocioData = apiRes.data;
+  }
+
+  if (productosRes.ok) {
+    const apiRes = await productosRes.json();
+    if (apiRes?.data?.productos) productos = apiRes.data.productos;
+  }
+} catch (e) {
+  console.error("Error al obtener datos del negocio:", e);
+}
+
+if (!negocioData) {
+  return Astro.redirect("/404");
+}
+---
+
+<Layout title={`${negocioData.nombreNegocio} | YUCA`}>
+  {/* Header & Info del Negocio */}
+  <HeaderNegocio negocioData={negocioData} />
+
+  {/* Listado de Productos */}
+  <CatalogoNegocio
+    client:load
+    productos={productos}
+    urlWhatsapp={negocioData.redesSociales.urlWhatsapp}
+  />
+
+  {/* Bottom Navigation Navbar */}
+  <Navbar client:load />
+
+  {/* Estrella Flotante sorpresa para la Búsqueda del Tesoro */}
+  <EstrellaFlotante client:load probabilidad={1} />
+</Layout>

@@ -1,0 +1,49 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import EncabezadoGeneral from "@/components/encabezadoGeneral.tsx";
+import Navbar from "@/components/navbar.tsx";
+import PromocionEmprendedor from "@/components/inicio/promocionEmprendedor.tsx";
+import CuponDelDia from "@/components/inicio/botonReclamarCuponDelDia.tsx";
+---
+
+<Layout>
+  <div class="h-[100dvh] flex flex-col overflow-hidden">
+    {/* Header section with Logo and Perfil */}
+    <EncabezadoGeneral client:load />
+
+    <main class="flex-1 w-full px-4 sm:px-8 max-w-lg mx-auto relative flex flex-col pt-2 pb-[120px] sm:pb-[130px] gap-4">
+      {/* Promoción Emprendedor Section */}
+      <section class="animate-fade-in-up w-full h-full relative z-10 flex-1 min-h-0">
+        <PromocionEmprendedor client:load />
+      </section>
+
+      {/* Cupón del Día Gacha Section */}
+      <section
+        class="animate-fade-in-up flex justify-end flex-shrink-0 z-30"
+        style="animation-delay: 200ms;"
+      >
+        <CuponDelDia client:load />
+      </section>
+    </main>
+  </div>
+
+  {/* Bottom Navigation Navbar */}
+  <Navbar client:load />
+
+  <style is:global>
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fade-in-up {
+      animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      opacity: 0;
+    }
+  </style>
+</Layout>

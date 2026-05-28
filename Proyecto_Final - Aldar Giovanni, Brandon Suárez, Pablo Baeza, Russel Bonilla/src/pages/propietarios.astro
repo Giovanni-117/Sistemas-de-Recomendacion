@@ -1,0 +1,22 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import PropietariosDashboard from "@/components/propietarios/PropietariosDashboard.tsx";
+import { verificarAutenticacionNegocio } from "@/lib/auth/jwtNegocio.ts"; // ─── Guard de autenticación de negocio ──────────────────────────────────────
+
+const duenio = verificarAutenticacionNegocio(Astro.request);
+if (!duenio) {
+  return Astro.redirect("/accesoPropietarios");
+}
+---
+
+<Layout title="Panel de Propietario | YUCA">
+  <main class="w-screen min-h-screen bg-slate-50">
+    <PropietariosDashboard client:load />
+  </main>
+
+  <div
+    id="modal-root"
+    style="position:fixed;top:0;left:0;width:0;height:0;z-index:99999;pointer-events:none;"
+  >
+  </div>
+</Layout>
