@@ -1,6 +1,8 @@
 # Sistemas de Recomendacion 2026
 Este es un repositorio para subir actualizaciones del proyecto de la materia de sistemas de recomendacion de la informacion.
 
+[Video de entrega final](https://youtu.be/pe8-m8xW5-8?si=50IB9qsYvtX52QUg)
+
 | NOMBRES                     | FOTO                                                                                          | DESCRIPCIÓN                                                                                                                                                             | LINKEDIN                                                                |
 |----------------------------|-----------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|
 |Aldar Giovanni                         | ![1756431636209 (2)](https://github.com/user-attachments/assets/5a939298-7156-4253-8985-6d7c63ed4915) | Ingeniería de Software en la Universidad Autónoma de Yucatán.                  | [Perfil LinkedIn](https://www.linkedin.com/in/aldar-gonzalez-a6594b217/)  |
